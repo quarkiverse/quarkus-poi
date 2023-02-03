@@ -1,5 +1,6 @@
 package io.quarkiverse.poi.deployment;
 
+import org.apache.xmlbeans.StringEnumAbstractBase;
 import org.apache.xmlbeans.XmlObject;
 import org.jboss.jandex.ClassInfo;
 import org.jboss.jandex.IndexView;
@@ -38,6 +39,9 @@ class POIProcessor {
             BuildProducer<ReflectiveClassBuildItem> reflectiveClass) {
         IndexView index = combinedIndexBuildItem.getIndex();
         for (ClassInfo implementor : index.getAllKnownImplementors(XmlObject.class)) {
+            reflectiveClass.produce(new ReflectiveClassBuildItem(true, true, implementor.name().toString()));
+        }
+        for (ClassInfo implementor : index.getAllKnownSubclasses(StringEnumAbstractBase.class)) {
             reflectiveClass.produce(new ReflectiveClassBuildItem(true, true, implementor.name().toString()));
         }
     }

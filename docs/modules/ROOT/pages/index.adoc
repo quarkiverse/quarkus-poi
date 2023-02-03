@@ -1,0 +1,29 @@
+= Quarkus POI
+
+include::./includes/attributes.adoc[]
+
+This extension enables you to use https://poi.apache.org[Apache POI] in your Quarkus application.
+
+https://poi.apache.org[Apache POI] is a Java API for Microsoft Documents. It allows Java programs to read and write files in Microsoft Office formats, such as Word, Excel and PowerPoint. It also allows programs to create new files in these formats. It is an open source project and is available under the Apache License.
+
+== Installation
+
+If you want to use this extension, you need to add the `io.quarkiverse.poi:quarkus-poi` extension first to your build file.
+
+For instance, with Maven, add the following dependency to your POM file:
+
+[source,xml,subs=attributes+]
+----
+<dependency>
+    <groupId>io.quarkiverse.poi</groupId>
+    <artifactId>quarkus-poi</artifactId>
+    <version>{project-version}</version>
+</dependency>
+----
+
+[[extension-configuration-reference]]
+== Extension Configuration Reference
+
+TIP: Remove this section if you don't have Quarkus configuration properties in your extension.
+
+include::includes/quarkus-poi.adoc[leveloffset=+1, opts=optional]

@@ -1,0 +1,19 @@
+name: Apache POI
+metadata:
+  keywords:
+    - poi
+    - office
+    - excel
+    - word
+    - powerpoint
+    - ooxml
+    - odf
+    - document
+    - spreadsheet
+    - presentation
+    - document
+    - writer
+  guide: https://quarkiverse.github.io/quarkiverse-docs/poi/dev/
+  categories:
+    - "miscellaneous"
+  status: "preview"

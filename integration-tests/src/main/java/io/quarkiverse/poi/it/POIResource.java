@@ -27,9 +27,9 @@ import javax.ws.rs.Path;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.streaming.SXSSFSheet;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
@@ -57,10 +57,12 @@ public class POIResource {
     public String xlxs() throws IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try (SXSSFWorkbook workbook = new SXSSFWorkbook(SXSSFWorkbook.DEFAULT_WINDOW_SIZE)) {
-            Sheet sheet = workbook.createSheet();
+            SXSSFSheet sheet = workbook.createSheet();
+            sheet.trackAllColumnsForAutoSizing();
             Row row = sheet.createRow(0);
             Cell cell = row.createCell(0);
             cell.setCellValue("test");
+            sheet.autoSizeColumn(0);
             workbook.write(baos);
         }
         // Read Excel created above

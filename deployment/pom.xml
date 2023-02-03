@@ -15,6 +15,10 @@
       <artifactId>quarkus-arc-deployment</artifactId>
     </dependency>
     <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-awt-deployment</artifactId>
+    </dependency>
+    <dependency>
       <groupId>io.quarkiverse.poi</groupId>
       <artifactId>quarkus-poi</artifactId>
       <version>${project.version}</version>

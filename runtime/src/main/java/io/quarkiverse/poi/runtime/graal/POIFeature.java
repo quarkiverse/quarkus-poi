@@ -11,8 +11,8 @@ public class POIFeature implements Feature {
         final String reason = "Quarkus run time init for Apache POI";
         runtimeInit.initializeAtRunTime("org.apache.poi.hssf.util", reason);
         runtimeInit.initializeAtRunTime("org.apache.poi.ss.format", reason);
-        runtimeInit.initializeAtRunTime("org.apache.poi.ss.format", reason);
         runtimeInit.initializeAtRunTime("org.apache.poi.util.RandomSingleton", reason);
+        runtimeInit.initializeAtRunTime("org.apache.poi.ss.util.SheetUtil", reason);
     }
 
     @Override

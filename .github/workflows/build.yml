@@ -50,10 +50,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           cache: 'maven'
           
-      - name: Build with Maven
-        run: mvn -B clean verify -Dno-format
-
       - name: Build with Maven (Native)
-        run: mvn -B verify -Dnative "-Dnative.surefire.skip"
+        run: mvn -B verify -Dnative -Dnative.surefire.skip
         #if: ${{ startsWith(matrix.os, 'windows') == false}}
         shell: bash

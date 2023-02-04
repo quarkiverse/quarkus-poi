@@ -51,3 +51,4 @@ jobs:
 
       - name: Build with Maven (Native)
         run: mvn -B verify -Dnative "-Dnative.surefire.skip"
+        if: not startsWith(matrix.os, 'windows')

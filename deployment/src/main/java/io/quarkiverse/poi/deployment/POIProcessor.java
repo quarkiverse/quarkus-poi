@@ -33,6 +33,7 @@ class POIProcessor {
     void indexTransitiveDependencies(BuildProducer<IndexDependencyBuildItem> index) {
         index.produce(new IndexDependencyBuildItem("org.apache.xmlbeans", "xmlbeans"));
         index.produce(new IndexDependencyBuildItem("org.apache.poi", "poi-ooxml-full"));
+        index.produce(new IndexDependencyBuildItem("org.apache.poi", "poi-scratchpad"));
     }
 
     @BuildStep

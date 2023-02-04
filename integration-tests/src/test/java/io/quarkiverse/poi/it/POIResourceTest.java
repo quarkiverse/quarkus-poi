@@ -21,6 +21,15 @@ public class POIResourceTest {
     }
 
     @Test
+    public void testDoc() {
+        given()
+                .when().get("/poi/doc")
+                .then()
+                .statusCode(200)
+                .body(startsWith("Hello POI"));
+    }
+
+    @Test
     public void testXlxs() {
         given()
                 .when().get("/poi/xlxs")

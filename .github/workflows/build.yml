@@ -48,7 +48,6 @@ jobs:
           java-version: '11'
           components: 'native-image'
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          native-image-job-reports: 'true'
           cache: 'maven'
           
       - name: Build with Maven

@@ -12,6 +12,7 @@ import io.quarkus.deployment.builditem.CombinedIndexBuildItem;
 import io.quarkus.deployment.builditem.FeatureBuildItem;
 import io.quarkus.deployment.builditem.IndexDependencyBuildItem;
 import io.quarkus.deployment.builditem.NativeImageFeatureBuildItem;
+import io.quarkus.deployment.builditem.SystemPropertyBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.ReflectiveClassBuildItem;
 
 class POIProcessor {
@@ -32,6 +33,11 @@ class POIProcessor {
     void indexTransitiveDependencies(BuildProducer<IndexDependencyBuildItem> index) {
         index.produce(new IndexDependencyBuildItem("org.apache.xmlbeans", "xmlbeans"));
         index.produce(new IndexDependencyBuildItem("org.apache.poi", "poi-ooxml-full"));
+    }
+
+    @BuildStep
+    SystemPropertyBuildItem ignoreMissingFontSystem() {
+        return new SystemPropertyBuildItem("org.apache.poi.ss.ignoreMissingFontSystem", "true");
     }
 
     @BuildStep

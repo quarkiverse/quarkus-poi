@@ -15,6 +15,15 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "tpodg",
+      "name": "Tomaž",
+      "avatar_url": "https://avatars.githubusercontent.com/u/896029?v=4",
+      "profile": "http://tomscode.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

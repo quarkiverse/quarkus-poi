@@ -25,6 +25,8 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
+import org.apache.poi.hwpf.HWPFDocument;
+import org.apache.poi.hwpf.extractor.WordExtractor;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -48,6 +50,19 @@ public class POIResource {
             assert is != null;
             XWPFDocument doc = new XWPFDocument(is);
             XWPFWordExtractor extractor = new XWPFWordExtractor(doc);
+            return extractor.getText();
+        }
+    }
+
+    @GET
+    @Path("/doc")
+    public String doc() throws IOException {
+
+        // Read MS Office files using Apache POI
+        try (InputStream is = getClass().getResourceAsStream("hello_poi.doc")) {
+            assert is != null;
+            HWPFDocument doc = new HWPFDocument(is);
+            WordExtractor extractor = new WordExtractor(doc);
             return extractor.getText();
         }
     }

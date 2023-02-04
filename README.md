@@ -1,6 +1,6 @@
 # Quarkus extension for Apache POI
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Version](https://img.shields.io/maven-central/v/io.quarkiverse.poi/quarkus-poi?logo=apache-maven&style=flat-square)](https://search.maven.org/artifact/io.quarkiverse.poi/quarkus-poi)
@@ -46,6 +46,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="http://gastaldi.wordpress.com"><img src="https://avatars.githubusercontent.com/u/54133?v=4?s=100" width="100px;" alt="George Gastaldi"/><br /><sub><b>George Gastaldi</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-poi/commits?author=gastaldi" title="Code">💻</a> <a href="#maintenance-gastaldi" title="Maintenance">🚧</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://tomscode.com"><img src="https://avatars.githubusercontent.com/u/896029?v=4?s=100" width="100px;" alt="Tomaž"/><br /><sub><b>Tomaž</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-poi/commits?author=tpodg" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>

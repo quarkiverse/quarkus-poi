@@ -22,6 +22,10 @@ on:
       - '*.txt'
       - '.all-contributorsrc'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+  
 jobs:
   build:
     name: Build on ${{ matrix.os }}
@@ -51,4 +55,4 @@ jobs:
 
       - name: Build with Maven (Native)
         run: mvn -B verify -Dnative "-Dnative.surefire.skip"
-        if: not startsWith(matrix.os, 'windows')
+        if: ${{ startsWith(matrix.os, 'windows') == false}}

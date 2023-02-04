@@ -39,10 +39,10 @@ class POIProcessor {
             BuildProducer<ReflectiveClassBuildItem> reflectiveClass) {
         IndexView index = combinedIndexBuildItem.getIndex();
         for (ClassInfo implementor : index.getAllKnownImplementors(XmlObject.class)) {
-            reflectiveClass.produce(new ReflectiveClassBuildItem(true, true, implementor.name().toString()));
+            reflectiveClass.produce(new ReflectiveClassBuildItem(false, false, implementor.name().toString()));
         }
         for (ClassInfo implementor : index.getAllKnownSubclasses(StringEnumAbstractBase.class)) {
-            reflectiveClass.produce(new ReflectiveClassBuildItem(true, true, implementor.name().toString()));
+            reflectiveClass.produce(new ReflectiveClassBuildItem(false, true, implementor.name().toString()));
         }
     }
 }

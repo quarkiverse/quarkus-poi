@@ -21,6 +21,7 @@ on:
       - '*.adoc'
       - '*.txt'
       - '.all-contributorsrc'
+      - '.github/project.yml'
 
 defaults:
   run:

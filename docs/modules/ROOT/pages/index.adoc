@@ -20,10 +20,3 @@ For instance, with Maven, add the following dependency to your POM file:
     <version>{project-version}</version>
 </dependency>
 ----
-
-[[extension-configuration-reference]]
-== Extension Configuration Reference
-
-TIP: Remove this section if you don't have Quarkus configuration properties in your extension.
-
-include::includes/quarkus-poi.adoc[leveloffset=+1, opts=optional]

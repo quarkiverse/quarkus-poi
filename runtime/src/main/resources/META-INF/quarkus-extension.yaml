@@ -13,7 +13,7 @@ metadata:
     - presentation
     - document
     - writer
-  guide: https://quarkiverse.github.io/quarkiverse-docs/poi/dev/
+  guide: https://quarkiverse.github.io/quarkiverse-docs/quarkus-poi/dev/
   categories:
     - "miscellaneous"
   status: "preview"

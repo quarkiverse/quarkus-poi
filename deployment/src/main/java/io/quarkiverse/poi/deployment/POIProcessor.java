@@ -11,6 +11,7 @@ import io.quarkus.deployment.annotations.BuildStep;
 import io.quarkus.deployment.builditem.CombinedIndexBuildItem;
 import io.quarkus.deployment.builditem.FeatureBuildItem;
 import io.quarkus.deployment.builditem.IndexDependencyBuildItem;
+import io.quarkus.deployment.builditem.NativeImageEnableAllCharsetsBuildItem;
 import io.quarkus.deployment.builditem.NativeImageFeatureBuildItem;
 import io.quarkus.deployment.builditem.SystemPropertyBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.ReflectiveClassBuildItem;
@@ -34,6 +35,11 @@ class POIProcessor {
         index.produce(new IndexDependencyBuildItem("org.apache.xmlbeans", "xmlbeans"));
         index.produce(new IndexDependencyBuildItem("org.apache.poi", "poi-ooxml-full"));
         index.produce(new IndexDependencyBuildItem("org.apache.poi", "poi-scratchpad"));
+    }
+
+    @BuildStep
+    NativeImageEnableAllCharsetsBuildItem enableAllCharsetsBuildItem() {
+        return new NativeImageEnableAllCharsetsBuildItem();
     }
 
     @BuildStep

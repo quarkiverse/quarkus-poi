@@ -46,7 +46,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="http://gastaldi.wordpress.com"><img src="https://avatars.githubusercontent.com/u/54133?v=4?s=100" width="100px;" alt="George Gastaldi"/><br /><sub><b>George Gastaldi</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-poi/commits?author=gastaldi" title="Code">💻</a> <a href="#maintenance-gastaldi" title="Maintenance">🚧</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="http://tomscode.com"><img src="https://avatars.githubusercontent.com/u/896029?v=4?s=100" width="100px;" alt="Tomaž"/><br /><sub><b>Tomaž</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-poi/commits?author=tpodg" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://tomscode.com"><img src="https://avatars.githubusercontent.com/u/896029?v=4?s=100" width="100px;" alt="Tomaž"/><br /><sub><b>Tomaž</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-poi/commits?author=tpodg" title="Code">💻</a> <a href="#maintenance-tpodg" title="Maintenance">🚧</a></td>
     </tr>
   </tbody>
 </table>

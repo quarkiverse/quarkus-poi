@@ -1,5 +1,5 @@
 name: quarkus-poi
 title: Quarkus POI
-version: dev
+version: 1.x
 nav:
   - modules/ROOT/nav.adoc

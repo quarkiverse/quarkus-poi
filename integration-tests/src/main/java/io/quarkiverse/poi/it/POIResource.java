@@ -33,6 +33,8 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.streaming.SXSSFSheet;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
@@ -44,7 +46,6 @@ public class POIResource {
     @GET
     @Path("/docx")
     public String docx() throws IOException {
-
         // Read MS Office files using Apache POI
         try (InputStream is = getClass().getResourceAsStream("hello_poi.docx")) {
             assert is != null;
@@ -83,6 +84,19 @@ public class POIResource {
         // Read Excel created above
         try (Workbook workbook = WorkbookFactory.create(new ByteArrayInputStream(baos.toByteArray()))) {
             return workbook.getSheetAt(0).getRow(0).getCell(0).getStringCellValue();
+        }
+    }
+
+    @GET
+    @Path("/xlsx")
+    public String xlsx() throws Exception {
+        // Read MS Office files using Apache POI
+        try (InputStream is = getClass().getResourceAsStream("hello_poi.xlsx");
+                XSSFWorkbook workbook = new XSSFWorkbook(is)) {
+            XSSFRow row = workbook.getSheetAt(0).getRow(0);
+            String hello = row.getCell(0).getStringCellValue();
+            String poi = row.getCell(1).getStringCellValue();
+            return hello + " " + poi;
         }
     }
 

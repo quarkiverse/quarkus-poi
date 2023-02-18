@@ -28,11 +28,15 @@ import javax.ws.rs.Path;
 import org.apache.poi.hwpf.HWPFDocument;
 import org.apache.poi.hwpf.extractor.WordExtractor;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.VerticalAlignment;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.streaming.SXSSFSheet;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFRichTextString;
 import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
@@ -75,9 +79,16 @@ public class POIResource {
             SXSSFSheet sheet = workbook.createSheet();
             sheet.trackAllColumnsForAutoSizing();
             Row row = sheet.createRow(0);
+            CellStyle style = workbook.createCellStyle();
+            style.setAlignment(HorizontalAlignment.CENTER);
+            style.setVerticalAlignment(VerticalAlignment.CENTER);
+            style.setWrapText(true);
+
             Cell cell = row.createCell(0);
-            cell.setCellValue("test");
+            cell.setCellValue(new XSSFRichTextString("test"));
+            cell.setCellStyle(style);
             sheet.autoSizeColumn(0);
+
             workbook.write(baos);
         }
         // Read Excel created above

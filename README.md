@@ -39,7 +39,7 @@ This extension provides the following features:
 ## Docker
 
 When building native images in Docker using the standard Quarkus Docker configuration files some additional features need to be
-installed to support Apache POI.  Specifically font information is not included in Red Hat's ubi-minimal images.  To install it
+installed to support Apache POI.  Specifically font information is not included in [Red Hat's ubi-minimal images](https://developers.redhat.com/products/rhel/ubi).  To install it
 simply add these lines to your `DockerFile.native` file:
 
 ```shell

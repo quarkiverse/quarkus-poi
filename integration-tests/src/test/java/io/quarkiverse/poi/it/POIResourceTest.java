@@ -35,7 +35,7 @@ public class POIResourceTest {
                 .when().get("/poi/xlxs")
                 .then()
                 .statusCode(200)
-                .body(is("test"));
+                .body(is("test 123456789012345689123456789"));
     }
 
     @Test

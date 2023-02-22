@@ -35,6 +35,21 @@ This extension provides the following features:
 
 - Native image support
 - Support for Apache POI 5.2.3
+
+## Docker
+
+When building native images in Docker using the standard Quarkus Docker configuration files some additional features need to be
+installed to support Apache POI.  Specifically font information is not included in Red Hat's ubi-minimal images.  To install it
+simply add these lines to your `DockerFile.native` file:
+
+```shell
+FROM registry.access.redhat.com/ubi8/ubi-minimal:8.7
+
+######################### Set up environment for POI #########################
+RUN microdnf update && microdnf install freetype && microdnf install fontconfig
+```
+
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):

@@ -90,8 +90,6 @@
       <properties>
         <skipITs>false</skipITs>
         <quarkus.package.type>native</quarkus.package.type>
-        <quarkus.native.container-build>true</quarkus.native.container-build>
-        <quarkus.native.builder-image>mandrel</quarkus.native.builder-image>
       </properties>
     </profile>
   </profiles>

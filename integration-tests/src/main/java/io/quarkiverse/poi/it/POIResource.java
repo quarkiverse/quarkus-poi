@@ -85,6 +85,7 @@ public class POIResource {
             Row row = sheet.createRow(0);
             Font font = workbook.createFont();
             font.setFontName(HSSFFont.FONT_ARIAL);
+            font.setBold(true);
             CellStyle style = workbook.createCellStyle();
             style.setFont(font);
             style.setAlignment(HorizontalAlignment.CENTER);
@@ -92,7 +93,7 @@ public class POIResource {
             style.setWrapText(true);
 
             Cell cell = row.createCell(0);
-            cell.setCellValue(new XSSFRichTextString("test"));
+            cell.setCellValue(new XSSFRichTextString("test 123456789012345689123456789"));
             cell.setCellStyle(style);
             sheet.autoSizeColumn(0);
 

@@ -46,7 +46,7 @@ simply add these lines to your `DockerFile.native` file:
 FROM registry.access.redhat.com/ubi8/ubi-minimal:8.7
 
 ######################### Set up environment for POI #########################
-RUN microdnf update && microdnf install freetype && microdnf install fontconfig
+RUN microdnf update && microdnf install freetype fontconfig && microdnf clean all
 ```
 
 

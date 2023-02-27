@@ -91,6 +91,8 @@ public class POIResource {
             cell.setCellStyle(style);
             sheet.autoSizeColumn(0);
 
+            workbook.getCreationHelper().createFormulaEvaluator().evaluateAll();
+
             workbook.write(baos);
         }
         // Read Excel created above

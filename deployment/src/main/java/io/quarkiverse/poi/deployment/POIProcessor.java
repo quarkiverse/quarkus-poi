@@ -58,4 +58,13 @@ class POIProcessor {
             reflectiveClass.produce(new ReflectiveClassBuildItem(false, true, implementor.name().toString()));
         }
     }
+
+    @BuildStep
+    public ReflectiveClassBuildItem registerLog4jClassesForReflection() {
+        return new ReflectiveClassBuildItem(true, true,
+                "org.apache.logging.log4j.message.ReusableMessageFactory",
+                "org.apache.logging.log4j.message.DefaultFlowMessageFactory",
+                "org.apache.logging.log4j.message.ParameterizedMessageFactory");
+    }
+
 }

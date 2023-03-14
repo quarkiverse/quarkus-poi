@@ -33,7 +33,8 @@
       "profile": "http://melloware.com",
       "contributions": [
         "doc",
-        "bug"
+        "bug",
+        "code"
       ]
     }
   ],

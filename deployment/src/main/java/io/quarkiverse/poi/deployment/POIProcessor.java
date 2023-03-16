@@ -52,19 +52,20 @@ class POIProcessor {
             BuildProducer<ReflectiveClassBuildItem> reflectiveClass) {
         IndexView index = combinedIndexBuildItem.getIndex();
         for (ClassInfo implementor : index.getAllKnownImplementors(XmlObject.class)) {
-            reflectiveClass.produce(new ReflectiveClassBuildItem(false, false, implementor.name().toString()));
+            reflectiveClass.produce(ReflectiveClassBuildItem.builder(implementor.name().toString()).build());
         }
         for (ClassInfo implementor : index.getAllKnownSubclasses(StringEnumAbstractBase.class)) {
-            reflectiveClass.produce(new ReflectiveClassBuildItem(false, true, implementor.name().toString()));
+            reflectiveClass.produce(ReflectiveClassBuildItem.builder(implementor.name().toString()).fields().build());
         }
     }
 
     @BuildStep
     public ReflectiveClassBuildItem registerLog4jClassesForReflection() {
-        return new ReflectiveClassBuildItem(true, true,
+        return ReflectiveClassBuildItem.builder(
                 "org.apache.logging.log4j.message.ReusableMessageFactory",
                 "org.apache.logging.log4j.message.DefaultFlowMessageFactory",
-                "org.apache.logging.log4j.message.ParameterizedMessageFactory");
+                "org.apache.logging.log4j.message.ParameterizedMessageFactory").fields().constructors().build();
+
     }
 
 }

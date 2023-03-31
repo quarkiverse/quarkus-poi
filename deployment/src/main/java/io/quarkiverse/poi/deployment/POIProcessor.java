@@ -15,6 +15,7 @@ import io.quarkus.deployment.builditem.IndexDependencyBuildItem;
 import io.quarkus.deployment.builditem.NativeImageEnableAllCharsetsBuildItem;
 import io.quarkus.deployment.builditem.NativeImageFeatureBuildItem;
 import io.quarkus.deployment.builditem.SystemPropertyBuildItem;
+import io.quarkus.deployment.builditem.nativeimage.NativeImageResourcePatternsBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.ReflectiveClassBuildItem;
 
 class POIProcessor {
@@ -67,6 +68,14 @@ class POIProcessor {
                 "org.apache.logging.log4j.message.ReusableMessageFactory",
                 "org.apache.logging.log4j.message.DefaultFlowMessageFactory",
                 "org.apache.logging.log4j.message.ParameterizedMessageFactory");
+    }
+
+    @BuildStep
+    public NativeImageResourcePatternsBuildItem registerTextResources() {
+        return new NativeImageResourcePatternsBuildItem.Builder().includePatterns(
+                "org/apache/poi/ss/formula/function/.*\\.txt"
+
+        ).build();
     }
 
 }

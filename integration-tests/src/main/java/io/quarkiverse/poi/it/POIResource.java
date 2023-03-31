@@ -34,6 +34,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.VerticalAlignment;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.streaming.SXSSFSheet;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFRichTextString;
@@ -88,6 +89,7 @@ public class POIResource {
             cell.setCellValue(new XSSFRichTextString("test"));
             cell.setCellStyle(style);
             sheet.autoSizeColumn(0);
+            sheet.setAutoFilter(new CellRangeAddress(0, 0, 0, 10));
 
             workbook.getCreationHelper().createFormulaEvaluator().evaluateAll();
 

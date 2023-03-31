@@ -8,7 +8,7 @@
   </parent>
   <groupId>io.quarkiverse.poi</groupId>
   <artifactId>quarkus-poi-parent</artifactId>
-  <version>2.0.0.Beta2</version>
+  <version>999-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Quarkus POI - Parent</name>
   <modules>
@@ -89,8 +89,4 @@
       </modules>
     </profile>
   </profiles>
-
-  <scm>
-    <tag>2.0.0.Beta2</tag>
-  </scm>
 </project>

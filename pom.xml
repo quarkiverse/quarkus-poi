@@ -17,7 +17,7 @@
     <module>docs</module>
   </modules>
   <properties>
-    <quarkus.version>3.0.0.Final</quarkus.version>
+    <quarkus.version>3.1.0.Final</quarkus.version>
     <poi.version>5.2.3</poi.version>
   </properties>
   <dependencyManagement>

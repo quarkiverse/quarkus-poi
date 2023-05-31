@@ -36,6 +36,16 @@
         "bug",
         "code"
       ]
+    },
+    {
+      "login": "knuspertante",
+      "name": "Michael Schilling",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32802753?v=4",
+      "profile": "https://github.com/knuspertante",
+      "contributions": [
+        "bug",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -43,5 +53,6 @@
   "repoType": "github",
   "repoHost": "https://github.com",
   "projectName": "quarkus-poi",
-  "projectOwner": "quarkiverse"
+  "projectOwner": "quarkiverse",
+  "commitType": "docs"
 }

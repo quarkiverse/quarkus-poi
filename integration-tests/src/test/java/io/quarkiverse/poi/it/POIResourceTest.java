@@ -37,4 +37,22 @@ public class POIResourceTest {
                 .statusCode(200)
                 .body(is("test"));
     }
+
+    @Test
+    public void testXlsx() {
+        given()
+                .when().get("/poi/xlsx")
+                .then()
+                .statusCode(200)
+                .body(is("Hello POI"));
+    }
+
+    @Test
+    public void testSpecialFile() {
+        given()
+                .when().get("/poi/specialFile")
+                .then()
+                .statusCode(200)
+                .body(is("Hallo POI"));
+    }
 }

@@ -3,6 +3,7 @@ package io.quarkiverse.poi.deployment;
 import org.apache.xmlbeans.StringEnumAbstractBase;
 import org.apache.xmlbeans.XmlObject;
 import org.jboss.jandex.ClassInfo;
+import org.jboss.jandex.DotName;
 import org.jboss.jandex.IndexView;
 
 import io.quarkiverse.poi.runtime.graal.POIFeature;
@@ -14,6 +15,7 @@ import io.quarkus.deployment.builditem.IndexDependencyBuildItem;
 import io.quarkus.deployment.builditem.NativeImageEnableAllCharsetsBuildItem;
 import io.quarkus.deployment.builditem.NativeImageFeatureBuildItem;
 import io.quarkus.deployment.builditem.SystemPropertyBuildItem;
+import io.quarkus.deployment.builditem.nativeimage.NativeImageResourcePatternsBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.ReflectiveClassBuildItem;
 
 class POIProcessor {
@@ -51,21 +53,21 @@ class POIProcessor {
     void registerXMLBeansClassesForReflection(CombinedIndexBuildItem combinedIndexBuildItem,
             BuildProducer<ReflectiveClassBuildItem> reflectiveClass) {
         IndexView index = combinedIndexBuildItem.getIndex();
-        for (ClassInfo implementor : index.getAllKnownImplementors(XmlObject.class)) {
+        for (ClassInfo implementor : index.getAllKnownImplementors(DotName.createSimple(XmlObject.class.getName()))) {
             reflectiveClass.produce(new ReflectiveClassBuildItem(false, false, implementor.name().toString()));
         }
-        for (ClassInfo implementor : index.getAllKnownSubclasses(StringEnumAbstractBase.class)) {
+        for (ClassInfo implementor : index
+                .getAllKnownSubclasses(DotName.createSimple(StringEnumAbstractBase.class.getName()))) {
             reflectiveClass.produce(new ReflectiveClassBuildItem(false, true, implementor.name().toString()));
         }
     }
 
     @BuildStep
     public ReflectiveClassBuildItem registerLog4jClassesForReflection() {
-        return ReflectiveClassBuildItem.builder(
+         return new ReflectiveClassBuildItem(true, true,
                 "org.apache.logging.log4j.message.ReusableMessageFactory",
                 "org.apache.logging.log4j.message.DefaultFlowMessageFactory",
-                "org.apache.logging.log4j.message.ParameterizedMessageFactory").fields().constructors().build();
-
+                "org.apache.logging.log4j.message.ParameterizedMessageFactory");
     }
 
     @BuildStep

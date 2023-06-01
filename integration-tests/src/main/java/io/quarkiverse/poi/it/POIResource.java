@@ -116,4 +116,13 @@ public class POIResource {
         }
     }
 
+    @GET
+    @Path("specialFile")
+    public String specialFile() throws Exception {
+        try (InputStream is = getClass().getResourceAsStream("special_file.xlsx")) {
+            var workbook = WorkbookFactory.create(is);
+            var cellValue = workbook.getSheetAt(0).getRow(0).getCell(0).getStringCellValue();
+            return cellValue;
+        }
+    }
 }

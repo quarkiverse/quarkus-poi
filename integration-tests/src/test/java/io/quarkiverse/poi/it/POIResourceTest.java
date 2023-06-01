@@ -47,4 +47,12 @@ public class POIResourceTest {
                 .body(is("Hello POI"));
     }
 
+    @Test
+    public void testSpecialFile() {
+        given()
+                .when().get("/poi/specialFile")
+                .then()
+                .statusCode(200)
+                .body(is("Hallo POI"));
+    }
 }

@@ -64,7 +64,7 @@ class POIProcessor {
 
     @BuildStep
     public ReflectiveClassBuildItem registerLog4jClassesForReflection() {
-         return new ReflectiveClassBuildItem(true, true,
+        return new ReflectiveClassBuildItem(true, true,
                 "org.apache.logging.log4j.message.ReusableMessageFactory",
                 "org.apache.logging.log4j.message.DefaultFlowMessageFactory",
                 "org.apache.logging.log4j.message.ParameterizedMessageFactory");

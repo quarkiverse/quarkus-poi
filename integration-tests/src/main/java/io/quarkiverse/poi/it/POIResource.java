@@ -97,4 +97,26 @@ public class POIResource {
         }
     }
 
+    @GET
+    @Path("/xlsx")
+    public String xlsx() throws Exception {
+        // Read MS Office files using Apache POI
+        try (InputStream is = getClass().getResourceAsStream("hello_poi.xlsx");
+                XSSFWorkbook workbook = new XSSFWorkbook(is)) {
+            XSSFRow row = workbook.getSheetAt(0).getRow(0);
+            String hello = row.getCell(0).getStringCellValue();
+            String poi = row.getCell(1).getStringCellValue();
+            return hello + " " + poi;
+        }
+    }
+
+    @GET
+    @Path("specialFile")
+    public String specialFile() throws Exception {
+        try (InputStream is = getClass().getResourceAsStream("special_file.xlsx")) {
+            var workbook = WorkbookFactory.create(is);
+            var cellValue = workbook.getSheetAt(0).getRow(0).getCell(0).getStringCellValue();
+            return cellValue;
+        }
+    }
 }

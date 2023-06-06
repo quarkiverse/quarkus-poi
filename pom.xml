@@ -16,6 +16,11 @@
     <module>runtime</module>
     <module>docs</module>
   </modules>
+  <scm>
+    <connection>scm:git:git@github.com:quarkiverse/quarkus-poi.git</connection>
+    <developerConnection>scm:git:git@github.com:quarkiverse/quarkus-poi.git</developerConnection>
+    <url>https://github.com/quarkiverse/quarkus-poi</url>
+  </scm>
   <properties>
     <quarkus.version>3.0.0.Final</quarkus.version>
     <poi.version>5.2.3</poi.version>

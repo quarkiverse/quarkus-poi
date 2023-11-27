@@ -24,7 +24,7 @@
   </scm>
   <properties>
     <quarkus.version>3.3.3</quarkus.version>
-    <poi.version>5.2.4</poi.version>
+    <poi.version>5.2.5</poi.version>
   </properties>
   <dependencyManagement>
     <dependencies>

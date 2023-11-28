@@ -1,9 +1,11 @@
 package io.quarkiverse.poi.runtime.graal;
 
-import java.text.AttributedString;
+import java.util.List;
 
-import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.ss.util.SheetUtil;
 import org.graalvm.nativeimage.Platform;
 import org.graalvm.nativeimage.Platforms;
@@ -27,8 +29,8 @@ public final class SheetUtilSubstitution {
     }
 
     @Substitute
-    private static double getCellWidth(int defaultCharWidth, int colspan,
-            CellStyle style, double minWidth, AttributedString str) {
+    public static double getCellWidth(Cell cell, float defaultCharWidth, DataFormatter formatter, boolean useMergedCells,
+            List<CellRangeAddress> mergedRegions) {
         return defaultCharWidth;
     }
 }

@@ -24,7 +24,9 @@
   </scm>
   <properties>
     <quarkus.version>3.3.3</quarkus.version>
-    <poi.version>5.2.4</poi.version>
+    <poi.version>5.2.5</poi.version>
+    <!-- Compress version must override Quarkus and match POI version -->
+    <compress.version>1.25.0</compress.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -54,6 +56,11 @@
         <groupId>org.apache.poi</groupId>
         <artifactId>poi-scratchpad</artifactId>
         <version>${poi.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-compress</artifactId>
+        <version>${compress.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

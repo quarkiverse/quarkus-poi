@@ -46,6 +46,15 @@
         "bug",
         "test"
       ]
+    },
+    {
+      "login": "manofthepeace",
+      "name": "manofthepeace",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13215031?v=4",
+      "profile": "https://github.com/manofthepeace",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,

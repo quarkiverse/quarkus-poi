@@ -25,6 +25,8 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.hwpf.HWPFDocument;
 import org.apache.poi.hwpf.extractor.WordExtractor;
 import org.apache.poi.ss.usermodel.Cell;
@@ -113,6 +115,32 @@ public class POIResource {
             String hello = row.getCell(0).getStringCellValue();
             String poi = row.getCell(1).getStringCellValue();
             return hello + " " + poi;
+        }
+    }
+
+    @GET
+    @Path("/xls")
+    public String xls() throws Exception {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        try (HSSFWorkbook workbook = new HSSFWorkbook()) {
+            HSSFSheet sheet = workbook.createSheet("Sheet 1");
+            sheet.autoSizeColumn(1);
+            sheet.setDefaultColumnWidth(20);
+            Row headRow = sheet.createRow(0);
+            headRow.setHeightInPoints(24);
+            int cellNo = 0;
+            int cellLength = 20;
+            while (cellNo < cellLength) {
+                Cell cell = headRow.createCell(cellNo++);
+                CellStyle style = workbook.createCellStyle();
+                cell.setCellStyle(style);
+                cell.setCellValue("test name" + cellNo);
+            }
+            workbook.write(baos);
+        }
+        // Read Excel created above
+        try (Workbook workbook = WorkbookFactory.create(new ByteArrayInputStream(baos.toByteArray()))) {
+            return workbook.getSheetAt(0).getRow(0).getCell(0).getStringCellValue();
         }
     }
 

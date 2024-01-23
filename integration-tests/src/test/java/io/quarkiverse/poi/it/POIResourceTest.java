@@ -30,6 +30,15 @@ public class POIResourceTest {
     }
 
     @Test
+    public void testXls() {
+        given()
+                .when().get("/poi/xls")
+                .then()
+                .statusCode(200)
+                .body(is("test name1"));
+    }
+
+    @Test
     public void testXlxs() {
         given()
                 .when().get("/poi/xlxs")

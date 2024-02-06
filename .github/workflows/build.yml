@@ -50,9 +50,8 @@ jobs:
       - name: Set up JDK 17
         uses: graalvm/setup-graalvm@v1
         with:
-          version: '22.3.0'
+          distribution: 'graalvm'
           java-version: '17'
-          components: 'native-image'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           cache: 'maven'
           

@@ -43,10 +43,25 @@ installed to support Apache POI.  Specifically font information is not included 
 simply add these lines to your `DockerFile.native` file:
 
 ```shell
-FROM registry.access.redhat.com/ubi8/ubi-minimal:8.7
+FROM registry.access.redhat.com/ubi8/ubi-minimal:8.9
 
-######################### Set up environment for POI #########################
+######################### Set up environment for POI #############################
 RUN microdnf update && microdnf install freetype fontconfig && microdnf clean all
+######################### Set up environment for POI #############################
+
+WORKDIR /work/
+RUN chown 1001 /work \
+    && chmod "g+rwX" /work \
+    && chown 1001:root /work
+# Shared objects to be dynamically loaded at runtime as needed,
+COPY --chown=1001:root target/*.properties target/*.so /work/
+COPY --chown=1001:root target/*-runner /work/application
+# Permissions fix for Windows
+RUN chmod "ugo+x" /work/application
+EXPOSE 8080
+USER 1001
+
+CMD ["./application", "-Dquarkus.http.host=0.0.0.0"]
 ```
 
 

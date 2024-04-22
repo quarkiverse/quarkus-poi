@@ -1,6 +1,6 @@
 # Quarkus extension for Apache POI
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Version](https://img.shields.io/maven-central/v/io.quarkiverse.poi/quarkus-poi?logo=apache-maven&style=flat-square)](https://search.maven.org/artifact/io.quarkiverse.poi/quarkus-poi)
@@ -82,6 +82,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="http://melloware.com"><img src="https://avatars.githubusercontent.com/u/4399574?v=4?s=100" width="100px;" alt="Melloware"/><br /><sub><b>Melloware</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-poi/commits?author=melloware" title="Documentation">📖</a> <a href="https://github.com/quarkiverse/quarkus-poi/issues?q=author%3Amelloware" title="Bug reports">🐛</a> <a href="https://github.com/quarkiverse/quarkus-poi/commits?author=melloware" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/knuspertante"><img src="https://avatars.githubusercontent.com/u/32802753?v=4?s=100" width="100px;" alt="Michael Schilling"/><br /><sub><b>Michael Schilling</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-poi/issues?q=author%3Aknuspertante" title="Bug reports">🐛</a> <a href="https://github.com/quarkiverse/quarkus-poi/commits?author=knuspertante" title="Tests">⚠️</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/manofthepeace"><img src="https://avatars.githubusercontent.com/u/13215031?v=4?s=100" width="100px;" alt="manofthepeace"/><br /><sub><b>manofthepeace</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-poi/issues?q=author%3Amanofthepeace" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/gian1200"><img src="https://avatars.githubusercontent.com/u/405347?v=4?s=100" width="100px;" alt="Giancarlo Calderón Cárdenas"/><br /><sub><b>Giancarlo Calderón Cárdenas</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-poi/commits?author=gian1200" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>

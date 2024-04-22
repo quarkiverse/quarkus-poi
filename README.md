@@ -64,6 +64,8 @@ USER 1001
 CMD ["./application", "-Dquarkus.http.host=0.0.0.0"]
 ```
 
+> [!CAUTION]
+> Make sure `.dockerignore` does not exclude `.so` files!
 
 ## Contributors ✨
 

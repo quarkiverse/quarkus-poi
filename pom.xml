@@ -23,7 +23,7 @@
     <tag>HEAD</tag>
   </scm>
   <properties>
-    <quarkus.version>3.3.3</quarkus.version>
+    <quarkus.version>3.8.4</quarkus.version>
     <poi.version>5.2.5</poi.version>
     <!-- Compress version must override Quarkus and match POI version -->
     <compress.version>1.26.1</compress.version>

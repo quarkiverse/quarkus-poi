@@ -25,8 +25,8 @@
   <properties>
     <quarkus.version>3.8.4</quarkus.version>
     <poi.version>5.3.0</poi.version>
-    <!-- Compress version must override Quarkus and match POI version -->
-    <compress.version>1.26.2</compress.version>
+    <!-- Commons IO version must override Quarkus and match POI version -->
+    <commons-io.version>2.16.1</commons-io.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -58,9 +58,9 @@
         <version>${poi.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.apache.commons</groupId>
-        <artifactId>commons-compress</artifactId>
-        <version>${compress.version}</version>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>${commons-io.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

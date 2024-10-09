@@ -17,4 +17,4 @@ metadata:
   icon-url: "https://poi.apache.org/images/poweredby-poi-logo.png"
   categories:
     - "miscellaneous"
-  status: "preview"
+  status: "stable"

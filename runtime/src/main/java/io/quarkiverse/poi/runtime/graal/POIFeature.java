@@ -6,11 +6,11 @@ import org.graalvm.nativeimage.hosted.RuntimeClassInitialization;
 public class POIFeature implements Feature {
     @Override
     public void afterRegistration(AfterRegistrationAccess access) {
-        final String reason = "Quarkus run time init for Apache POI";
-        RuntimeClassInitialization.initializeAtRunTime("org.apache.poi.hssf.util", reason);
-        RuntimeClassInitialization.initializeAtRunTime("org.apache.poi.ss.format", reason);
-        RuntimeClassInitialization.initializeAtRunTime("org.apache.poi.util.RandomSingleton", reason);
-        RuntimeClassInitialization.initializeAtRunTime("org.apache.poi.ss.util.SheetUtil", reason);
+        RuntimeClassInitialization.initializeAtRunTime(org.apache.poi.hssf.util.RKUtil.class.getPackageName());
+        RuntimeClassInitialization.initializeAtRunTime(org.apache.poi.ss.format.CellFormatType.class.getPackageName());
+        RuntimeClassInitialization.initializeAtRunTime(org.apache.poi.util.RandomSingleton.class.getName());
+        RuntimeClassInitialization.initializeAtRunTime(org.apache.poi.ss.util.SheetUtil.class.getName());
+        RuntimeClassInitialization.initializeAtRunTime(org.apache.xmlbeans.impl.schema.TypeSystemHolder.class.getName());
     }
 
     @Override

@@ -64,6 +64,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "mschorsch",
+      "name": "mschorsch",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4418363?v=4",
+      "profile": "https://github.com/mschorsch",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,

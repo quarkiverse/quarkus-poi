@@ -1,11 +1,14 @@
 package io.quarkiverse.poi.deployment;
 
+import java.util.List;
+
 import org.apache.xmlbeans.StringEnumAbstractBase;
 import org.apache.xmlbeans.XmlObject;
 import org.jboss.jandex.ClassInfo;
 import org.jboss.jandex.IndexView;
 
 import io.quarkiverse.poi.runtime.graal.POIFeature;
+import io.quarkus.deployment.IsNormal;
 import io.quarkus.deployment.annotations.BuildProducer;
 import io.quarkus.deployment.annotations.BuildStep;
 import io.quarkus.deployment.builditem.CombinedIndexBuildItem;
@@ -16,6 +19,7 @@ import io.quarkus.deployment.builditem.NativeImageFeatureBuildItem;
 import io.quarkus.deployment.builditem.SystemPropertyBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.NativeImageResourcePatternsBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.ReflectiveClassBuildItem;
+import io.quarkus.deployment.pkg.builditem.UberJarMergedResourceBuildItem;
 
 class POIProcessor {
 
@@ -74,5 +78,27 @@ class POIProcessor {
         return new NativeImageResourcePatternsBuildItem.Builder().includePatterns(
                 "org/apache/poi/ss/formula/function/.*\\.txt",
                 "org/apache/poi/schemas/ooxml/.*\\.xsb").build();
+    }
+
+    /**
+     * Produces `UberJarMergedResourceBuildItem`s for each specified service file to be included in the Uber JAR.
+     * <p>
+     * This build step is only executed in "normal" mode and registers each of the listed services in
+     * the `META-INF/services` directory.
+     *
+     * @param producer The build item producer for creating `UberJarMergedResourceBuildItem` instances.
+     */
+    @BuildStep(onlyIf = IsNormal.class)
+    void uberJarServiceLoaders(BuildProducer<UberJarMergedResourceBuildItem> producer) {
+        List<String> serviceFiles = List.of(
+                "org.apache.poi.extractor.ExtractorProvider",
+                "org.apache.poi.sl.draw.ImageRenderer",
+                "org.apache.poi.sl.usermodel.MetroShapeProvider",
+                "org.apache.poi.sl.usermodel.SlideShowProvider",
+                "org.apache.poi.ss.usermodel.WorkbookProvider");
+
+        for (String serviceFile : serviceFiles) {
+            producer.produce(new UberJarMergedResourceBuildItem("META-INF/services/" + serviceFile));
+        }
     }
 }

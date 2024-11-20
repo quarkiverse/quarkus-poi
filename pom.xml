@@ -25,7 +25,7 @@
     <quarkus.version>3.15.1</quarkus.version>
     <poi.version>5.3.0</poi.version>
     <!-- Commons IO version must override Quarkus and match POI version -->
-    <commons-io.version>2.16.1</commons-io.version>
+    <commons-io.version>2.18.0</commons-io.version>
   </properties>
   <dependencyManagement>
     <dependencies>

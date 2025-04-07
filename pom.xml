@@ -23,7 +23,7 @@
   </scm>
   <properties>
     <quarkus.version>3.15.1</quarkus.version>
-    <poi.version>5.4.0</poi.version>
+    <poi.version>5.4.1</poi.version>
     <!-- Commons IO version must override Quarkus and match POI version -->
     <commons-io.version>2.18.0</commons-io.version>
   </properties>

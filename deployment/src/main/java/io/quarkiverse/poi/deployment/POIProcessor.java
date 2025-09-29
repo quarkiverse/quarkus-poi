@@ -56,7 +56,7 @@ class POIProcessor {
     void registerXMLBeansClassesForReflection(CombinedIndexBuildItem combinedIndexBuildItem,
             BuildProducer<ReflectiveClassBuildItem> reflectiveClass) {
         IndexView index = combinedIndexBuildItem.getIndex();
-        for (ClassInfo implementor : index.getAllKnownImplementors(XmlObject.class)) {
+        for (ClassInfo implementor : index.getAllKnownImplementations(XmlObject.class)) {
             reflectiveClass.produce(ReflectiveClassBuildItem.builder(implementor.name().toString()).build());
         }
         for (ClassInfo implementor : index.getAllKnownSubclasses(StringEnumAbstractBase.class)) {

@@ -22,10 +22,8 @@
     <tag>HEAD</tag>
   </scm>
   <properties>
-    <quarkus.version>3.20.2</quarkus.version>
+    <quarkus.version>3.27.0</quarkus.version>
     <poi.version>5.4.1</poi.version>
-    <!-- Commons IO version must override Quarkus and match POI version -->
-    <commons-io.version>2.20.0</commons-io.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -55,11 +53,6 @@
         <groupId>org.apache.poi</groupId>
         <artifactId>poi-scratchpad</artifactId>
         <version>${poi.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>commons-io</groupId>
-        <artifactId>commons-io</artifactId>
-        <version>${commons-io.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

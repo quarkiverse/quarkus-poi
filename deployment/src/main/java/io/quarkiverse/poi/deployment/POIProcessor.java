@@ -8,7 +8,7 @@ import org.jboss.jandex.ClassInfo;
 import org.jboss.jandex.IndexView;
 
 import io.quarkiverse.poi.runtime.graal.POIFeature;
-import io.quarkus.deployment.IsNormal;
+import io.quarkus.deployment.IsProduction;
 import io.quarkus.deployment.annotations.BuildProducer;
 import io.quarkus.deployment.annotations.BuildStep;
 import io.quarkus.deployment.builditem.CombinedIndexBuildItem;
@@ -56,7 +56,7 @@ class POIProcessor {
     void registerXMLBeansClassesForReflection(CombinedIndexBuildItem combinedIndexBuildItem,
             BuildProducer<ReflectiveClassBuildItem> reflectiveClass) {
         IndexView index = combinedIndexBuildItem.getIndex();
-        for (ClassInfo implementor : index.getAllKnownImplementors(XmlObject.class)) {
+        for (ClassInfo implementor : index.getAllKnownImplementations(XmlObject.class)) {
             reflectiveClass.produce(ReflectiveClassBuildItem.builder(implementor.name().toString()).build());
         }
         for (ClassInfo implementor : index.getAllKnownSubclasses(StringEnumAbstractBase.class)) {
@@ -88,7 +88,7 @@ class POIProcessor {
      *
      * @param producer The build item producer for creating `UberJarMergedResourceBuildItem` instances.
      */
-    @BuildStep(onlyIf = IsNormal.class)
+    @BuildStep(onlyIf = IsProduction.class)
     void uberJarServiceLoaders(BuildProducer<UberJarMergedResourceBuildItem> producer) {
         List<String> serviceFiles = List.of(
                 "org.apache.poi.extractor.ExtractorProvider",

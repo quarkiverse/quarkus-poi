@@ -25,7 +25,7 @@
     <quarkus.version>3.27.0</quarkus.version>
     <poi.version>5.4.1</poi.version>
     <!-- These should match the POI version -->
-    <zstd.version>1.5.7-4</zstd.version>
+    <zstd.version>1.5.7-5</zstd.version>
     <xz.version>1.10</xz.version>
   </properties>
   <dependencyManagement>

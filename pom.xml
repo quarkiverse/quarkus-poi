@@ -26,7 +26,7 @@
     <poi.version>5.4.1</poi.version>
     <!-- These should match the POI version -->
     <zstd.version>1.5.7-6</zstd.version>
-    <xz.version>1.10</xz.version>
+    <xz.version>1.11</xz.version>
   </properties>
   <dependencyManagement>
     <dependencies>

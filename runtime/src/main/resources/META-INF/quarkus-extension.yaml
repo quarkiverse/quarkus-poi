@@ -15,6 +15,7 @@ metadata:
     - writer
   guide: "https://quarkiverse.github.io/quarkiverse-docs/quarkus-poi/dev/"
   icon-url: "https://raw.githubusercontent.com/quarkiverse/quarkus-poi/main/docs/modules/ROOT/assets/images/poi.svg"
+  lib-ga: org.apache.poi:poi[https://poi.apache.org/]
   categories:
     - "miscellaneous"
   status: "stable"

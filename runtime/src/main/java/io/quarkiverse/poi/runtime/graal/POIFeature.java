@@ -11,6 +11,7 @@ public class POIFeature implements Feature {
         RuntimeClassInitialization.initializeAtRunTime(org.apache.poi.util.RandomSingleton.class.getName());
         RuntimeClassInitialization.initializeAtRunTime(org.apache.poi.ss.util.SheetUtil.class.getName());
         RuntimeClassInitialization.initializeAtRunTime(org.apache.xmlbeans.impl.schema.TypeSystemHolder.class.getName());
+        RuntimeClassInitialization.initializeAtRunTime("org.apache.poi.ss.util.SheetUtil$WithJavaDesktop");
     }
 
     @Override

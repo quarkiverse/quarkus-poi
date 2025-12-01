@@ -23,7 +23,7 @@
   </scm>
   <properties>
     <quarkus.version>3.27.1</quarkus.version>
-    <poi.version>5.4.1</poi.version>
+    <poi.version>5.5.1</poi.version>
     <!-- These should match the POI version -->
     <zstd.version>1.5.7-6</zstd.version>
     <xz.version>1.11</xz.version>

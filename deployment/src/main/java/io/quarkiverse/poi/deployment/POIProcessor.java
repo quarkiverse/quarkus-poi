@@ -62,6 +62,12 @@ class POIProcessor {
         for (ClassInfo implementor : index.getAllKnownSubclasses(StringEnumAbstractBase.class)) {
             reflectiveClass.produce(ReflectiveClassBuildItem.builder(implementor.name().toString()).fields().build());
         }
+        reflectiveClass.produce(
+                ReflectiveClassBuildItem.builder(
+                        "org.openxmlformats.schemas.drawingml.x2006.picture.CTPicture",
+                        "[Lorg.openxmlformats.schemas.drawingml.x2006.picture.CTPicture;")
+                        .unsafeAllocated()
+                        .build());
     }
 
     @BuildStep

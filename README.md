@@ -89,6 +89,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/gian1200"><img src="https://avatars.githubusercontent.com/u/405347?v=4?s=100" width="100px;" alt="Giancarlo Calderón Cárdenas"/><br /><sub><b>Giancarlo Calderón Cárdenas</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-poi/commits?author=gian1200" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/mschorsch"><img src="https://avatars.githubusercontent.com/u/4418363?v=4?s=100" width="100px;" alt="mschorsch"/><br /><sub><b>mschorsch</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-poi/issues?q=author%3Amschorsch" title="Bug reports">🐛</a></td>
     </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/wuyuan1996"><img src="https://avatars.githubusercontent.com/u/56283647?v=4?s=100" width="100px;" alt="wuyuan1996"/><br /><sub><b>wuyuan1996</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-poi/issues?q=author%3Awuyuan1996" title="Bug reports">🐛</a> <a href="https://github.com/quarkiverse/quarkus-poi/commits?author=wuyuan1996" title="Tests">⚠️</a></td>
+    </tr>
   </tbody>
 </table>
 

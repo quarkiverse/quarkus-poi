@@ -73,6 +73,16 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "wuyuan1996",
+      "name": "wuyuan1996",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56283647?v=4",
+      "profile": "https://github.com/wuyuan1996",
+      "contributions": [
+        "bug",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,

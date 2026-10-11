@@ -33,6 +33,16 @@ Include the following dependency in your pom.xml:
 </dependency>
 ```
 
+## Compatibility
+
+| Quarkus POI version | Quarkus version |
+| ------------------- | --------------- |
+| 1.x                 | 2.x             |
+| 2.2.x               | 3.27.1+         |
+| 3.x                 | 4.0.0.Beta1+    |
+
+3.x targets Quarkus 4 and requires JDK 21. If you are still on Quarkus 3, stay on 2.2.x, which is maintained from the `2.x` branch.
+
 ## Features
 
 This extension provides the following features:

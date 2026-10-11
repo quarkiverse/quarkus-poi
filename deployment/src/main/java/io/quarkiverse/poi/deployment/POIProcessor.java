@@ -81,9 +81,9 @@ class POIProcessor {
 
     @BuildStep
     public NativeImageResourcePatternsBuildItem registerResources() {
-        return new NativeImageResourcePatternsBuildItem.Builder().includePatterns(
-                "org/apache/poi/ss/formula/function/.*\\.txt",
-                "org/apache/poi/schemas/ooxml/.*\\.xsb").build();
+        return new NativeImageResourcePatternsBuildItem.Builder().includeGlobs(
+                "org/apache/poi/ss/formula/function/*.txt",
+                "org/apache/poi/schemas/ooxml/**/*.xsb").build();
     }
 
     /**

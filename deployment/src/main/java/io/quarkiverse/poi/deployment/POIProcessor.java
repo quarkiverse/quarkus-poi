@@ -22,6 +22,7 @@ import io.quarkus.deployment.builditem.nativeimage.FfmDowncallBuildItem.Critical
 import io.quarkus.deployment.builditem.nativeimage.FfmType;
 import io.quarkus.deployment.builditem.nativeimage.NativeImageResourcePatternsBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.ReflectiveClassBuildItem;
+import io.quarkus.deployment.builditem.nativeimage.RuntimeInitializedPackageBuildItem;
 import io.quarkus.deployment.pkg.builditem.UberJarMergedResourceBuildItem;
 
 class POIProcessor {
@@ -90,7 +91,15 @@ class POIProcessor {
      * Signatures mirror the `FunctionDescriptor`s in zstd-jni's `ZstdBinding`; `size_t` is `long` on all
      * 64-bit native targets. The two struct-by-value functions (`ZSTD_getFrameProgression`,
      * `ZDICT_trainFromBuffer_legacy`) cannot be expressed as {@link FfmType}s and are not registered.
+     * <p>
+     * zstd-jni must also be initialized at run time: Quarkus initializes classes at build time by default, which
+     * would bake `ZstdBinding`'s `static final` downcall handles into the image heap and fail the same way.
      */
+    @BuildStep
+    RuntimeInitializedPackageBuildItem runtimeInitZstd() {
+        return new RuntimeInitializedPackageBuildItem("com.github.luben.zstd");
+    }
+
     @BuildStep
     void registerZstdDowncalls(BuildProducer<FfmDowncallBuildItem> downcalls) {
         final FfmType A = FfmType.ADDRESS;

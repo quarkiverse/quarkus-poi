@@ -48,7 +48,7 @@ Include the following dependency in your pom.xml:
 This extension provides the following features:
 
 - Native image support
-- Support for Apache POI 5.2.3
+- Support for Apache POI
 
 ## Docker
 

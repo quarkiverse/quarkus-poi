@@ -51,10 +51,12 @@ jobs:
 
       - uses: actions/checkout@v5
 
-      - name: Set up GraalVM 25
+      # Use Mandrel instead of GraalVM CE: a native-image fix needed by POI was
+      # backported to Mandrel 25 but not to GraalVM 25.0
+      - name: Set up Mandrel 25
         uses: graalvm/setup-graalvm@v1
         with:
-          distribution: 'graalvm'
+          distribution: 'mandrel'
           java-version: '25'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           cache: 'maven'
